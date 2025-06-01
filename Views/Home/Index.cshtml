@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Word Submitter";
+}
+
+<h2>Submit a Word</h2>
+
+<form method="post" asp-controller="Home" asp-action="Submit">
+    <input type="text" name="word" required />
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
