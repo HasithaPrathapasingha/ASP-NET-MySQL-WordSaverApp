@@ -26,5 +26,10 @@ namespace WordSaverApp.Controllers
             ViewBag.Message = "Word saved successfully!";
             return View("Index");
         }
+        public IActionResult List()
+        {
+            var words = _context.WordEntries.ToList();
+            return View(words);
+        }
     }
 }

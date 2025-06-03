@@ -1,0 +1,25 @@
+@model IEnumerable<WordSaverApp.Models.WordEntry>
+
+@{
+    ViewData["Title"] = "All Submitted Words";
+}
+
+<h2>All Submitted Words</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Word</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Word</td>
+            </tr>
+        }
+    </tbody>
+</table>

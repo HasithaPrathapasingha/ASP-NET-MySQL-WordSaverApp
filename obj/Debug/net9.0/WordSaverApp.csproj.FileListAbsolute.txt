@@ -169,3 +169,4 @@ D:\Net\New folder (4)\WordSaverApp\obj\Debug\net9.0\refint\WordSaverApp.dll
 D:\Net\New folder (4)\WordSaverApp\obj\Debug\net9.0\WordSaverApp.pdb
 D:\Net\New folder (4)\WordSaverApp\obj\Debug\net9.0\WordSaverApp.genruntimeconfig.cache
 D:\Net\New folder (4)\WordSaverApp\obj\Debug\net9.0\ref\WordSaverApp.dll
+D:\Net\New folder (4)\WordSaverApp\obj\Debug\net9.0\WordSaverApp.sourcelink.json
