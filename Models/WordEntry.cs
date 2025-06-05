@@ -4,5 +4,6 @@ namespace WordSaverApp.Models
     {
         public int Id { get; set; }
         public required string Word { get; set; }
+        public DateOnly Date { get; set; }
     }
 }

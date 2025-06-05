@@ -18,7 +18,11 @@ namespace WordSaverApp.Controllers
         {
             if (!string.IsNullOrWhiteSpace(word))
             {
-                var entry = new WordEntry { Word = word };
+                var entry = new WordEntry { 
+                    Word = word,
+                    Date = DateOnly.FromDateTime(DateTime.Today)
+                };// Today's date only 
+                
                 _context.WordEntries.Add(entry);
                 _context.SaveChanges();
             }
