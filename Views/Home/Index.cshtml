@@ -5,11 +5,47 @@
 <h2>Submit a Word</h2>
 
 <form method="post" asp-controller="Home" asp-action="Submit">
-    <input type="text" name="word" required />
-    <button type="submit">Submit</button>
+    <div class="mb-3">
+        <label for="word" class="form-label">Word</label>
+        <input type="text" class="form-control" name="word" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description (at least 100 words)</label>
+        <textarea class="form-control" name="description" rows="5" required></textarea>
+        <small id="wordCount" class="form-text text-muted">0 / 100 words</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 @if (ViewBag.Message != null)
 {
+    <div class="alert alert-info mt-3">@ViewBag.Message</div>
     <p>@ViewBag.Message</p>
 }
+
+<script>
+    const descriptionInput = document.getElementById("description");
+    const wordCountDisplay = document.getElementById("wordCount");
+
+    descriptionInput.addEventListener("input", () => {
+        const words = descriptionInput.value.trim().split(/\s+/).filter(w => w.length > 0);
+        wordCountDisplay.textContent = `${words.length} / 100 words`;
+
+        if (words.length > 100) {
+            wordCountDisplay.classList.add("text-danger");
+        } else {
+            wordCountDisplay.classList.remove("text-danger");
+        }
+    });
+
+    function validateForm() {
+        const words = descriptionInput.value.trim().split(/\s+/).filter(w => w.length > 0);
+        if (words.length > 100) {
+            alert("Description must not exceed 100 words.");
+            return false;
+        }
+        return true;
+    }
+</script>

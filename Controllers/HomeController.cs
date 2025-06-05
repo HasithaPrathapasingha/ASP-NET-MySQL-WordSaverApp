@@ -14,22 +14,28 @@ namespace WordSaverApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Submit(string word)
+        public IActionResult Submit(string word, string description)
         {
-            if (!string.IsNullOrWhiteSpace(word))
-            {
-                var entry = new WordEntry { 
-                    Word = word,
-                    Date = DateOnly.FromDateTime(DateTime.Today)
-                };// Today's date only 
-                
-                _context.WordEntries.Add(entry);
-                _context.SaveChanges();
+            int wordCount = description?.Split(new[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries).Length ?? 0;
+
+            if (string.IsNullOrWhiteSpace(word) || string.IsNullOrWhiteSpace(description) || wordCount > 100){
+                ViewBag.Message = "Both fields are required and description must be 100 words max.";
+                return View("Index");
             }
+
+            var entry = new WordEntry{
+                Word = word,
+                Description = description,
+                Date = DateOnly.FromDateTime(DateTime.Today)
+            };
+
+            _context.WordEntries.Add(entry);
+            _context.SaveChanges();
 
             ViewBag.Message = "Word saved successfully!";
             return View("Index");
         }
+
         public IActionResult List()
         {
             var words = _context.WordEntries.ToList();

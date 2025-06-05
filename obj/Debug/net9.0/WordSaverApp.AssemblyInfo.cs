@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordSaverApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1b6b2b55177b32f4579610c55e0efbdb026a635")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2faa3a75d9f15ce3c4cd2c31308cba7de282ac4")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordSaverApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordSaverApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
